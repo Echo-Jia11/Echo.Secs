@@ -202,12 +202,11 @@ namespace Echo.Secs.Data
             };
         }
 
-        public static SecsHeader CreateHeader61(ReadOnlySpan<byte> buf)
+        public static SecsHeader CreateHeader6a(ReadOnlySpan<byte> buf)
         {
             int pos = 0;
             // 读取并处理各字段
-            var buf6 = buf[pos + 6];
-            var waitFlag = buf6 > 0x80;
+            var waitFlag = buf[pos + 6] > 0x80;
             var length = buf[pos++] << 24 |
                          buf[pos++] << 16 |
                          buf[pos++] << 8 |
